@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="252514c5-4020-46ad-ad1f-84f167b50ba0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/homework.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quiz-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz-2-4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/quiz-2.html" afterDir="false" />
     </list>
@@ -46,7 +45,8 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager">
@@ -82,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666073794542</updated>
       <workItem from="1666073796298" duration="10350000" />
-      <workItem from="1666139606134" duration="7653000" />
+      <workItem from="1666139606134" duration="17449000" />
     </task>
     <servers />
   </component>

@@ -68,6 +68,8 @@
 
             box-shadow: 0px 0px 3px 0px gray;
             padding: 20px;
+
+            display: none;
         }
         .mybtn {
             display: flex;
@@ -82,14 +84,27 @@
         }
     </style>
     <script>
-        let count = 0;
-        function hey() {
-            count++;
-            if (count % 2 == 0) {
-                alert("짝수입니다!");
-            } else {
-                alert("홀수입니다!");
+        $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/sparta_api/seoulair",
+            data: {},
+            success: function (response) {
+                let rows = response["RealtimeCityAir"]["row"];
+                console.log(rows);
+                for (let i = 0; i < rows.length; i++) {
+                    let gu_name = rows[i]["MSRSTE_NM"];
+                    let gu_mise = rows[i]["IDEX_MVL"];
+                    console.log(gu_name, gu_mise);
+                }
             }
+        })
+
+
+        function open_box() {
+           $('#post-box').show();
+        }
+        function close_box() {
+           $('#post-box').hide();
         }
     </script>
 </head>
@@ -97,12 +112,12 @@
 <body>
     <div class="mytitle">
         <h1>내 생에 최고의 영화들</h1>
-        <button onclick="hey()">영화 기록하기</button>
+        <button onclick="open_box()">영화 기록하기</button>
     </div>
-    <div class="myposter">
+    <div class="myposter" id="post-box">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">영화URL</label>
+            <input type="email" class="form-control" id="url" placeholder="name@example.com">
+            <label for="url">영화URL</label>
         </div>
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">별칭</label>
@@ -121,11 +136,11 @@
         </div>
         <div class="mybtn">
             <button type="button" class="btn btn-dark">기록하기</button>
-            <button type="button" class="btn btn-outline-dark">닫기</button>
+            <button onclick="close_box()" type="button" class="btn btn-outline-dark">닫기</button>
         </div>
     </div>
    <div class="wrap">
-       <div class="row row-cols-1 row-cols-md-4 g-4">
+       <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
            <div class="col">
                <div class="card">
                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
