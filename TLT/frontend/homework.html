@@ -58,9 +58,20 @@
         }
     </style>
     <script>
-        function isEven(num) {
-            console.log(num % 2 == 0)
-        }
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data: {},
+                success: function (response) {
+                    let temp = response["temp"];
+
+                    let tmp_html = `<p>현재기온: ${temp}도</p>`;
+
+                    $(".mytitle").append(tmp_html);
+                }
+            })
+        });
     </script>
 </head>
 
