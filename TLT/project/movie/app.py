@@ -32,7 +32,7 @@ def movie_post():
         'title':title,
         'image':image,
         'desc':desc,
-        'srat':star_receive,
+        'star':star_receive,
         'comment':comment_receive
     }
 
